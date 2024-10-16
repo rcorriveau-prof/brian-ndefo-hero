@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magasin</title>
+    <link rel="stylesheet" href="Magasin.css">
+</head>
+<body>
+  <header id="Titre"> Magasin</header>
+  <div>
+    <table id="Tableau">
+      <thead>
+      <tr>
+        <th scope="col">Objet</th>
+        <th scope="col">Puissane Offense</th>
+        <th scope="col"> Puissance Defensive</th>
+        <th scope="col"> Cout</th>
+        <th scope="col"> Achat</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Gros marteau</td>
+        <td>10</td>
+        <td>0</td>
+        <td>50,00$</td>
+        <td><input type="checkbox" name="Achat_marteau" ></td>
+      </tr>
+      <tr>
+        <td>Casque Cornu</td>
+        <td> 3 </td>
+        <td> 6 </td>
+        <td> 100.00$</td>
+        <td> <input type="checkbox" name="Achat_casque"></td>
+        </tr>
+        <tr>
+          <td>Pantoufles discrètes</td>
+          <td> 0 </td>
+          <td> 8 </td>
+          <td> 200.00$</td>
+          <td> <input type="checkbox" name="Achat_pantouffles"></td>
+        </tr>
+        <tr>
+          <td>Sabre laser</td>
+          <td> 20 </td>
+          <td> -5 </td>
+          <td> 400.00$</td>
+          <td> <input type="checkbox" name="Achat_sabre"></td>
+        </tr>
+        <tr>
+          <td>Plastron de reveveur</td>
+          <td> 0 </td>
+          <td> 15 </td>
+          <td> 75.00$</td>
+          <td> <input type="checkbox" name="Achat_plastron"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="Acheter_objets" type="submit"> Acheter</button>
+  </div>
+
+  <div>
+    <form class="ajoutHero">
+      <h2> Ajouter un objet au magasin</h2>
+
+      <div>
+        <label for="Nom"> Nom: </label>
+        <input type="text", id="Nom" required>
+      </div>
+
+      <div>
+        <label for="puissance_o">Puissance Offense : </label>
+        <input type="number" id="puissance_o" required>
+      </div>
+
+      <div>
+        <label for="puissance_d"> Puissance Défensive : </label>
+        <input type="number" id="puissance_d" required>
+      </div>
+
+      <div>
+        <label for="cout"> Cout : </label>
+        <input type="text" id="cout" required>
+      </div>
+
+      <button id="Ajouter_objet" type="submit"> Ajouter</button>
+      <button id="Annuler_ajout" type="reset"> Annuler</button>
+    </form>
+  </div>
+</body>
+</html>

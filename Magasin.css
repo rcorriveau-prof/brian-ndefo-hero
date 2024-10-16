@@ -1,0 +1,23 @@
+#Titre{
+    text-align: left;
+    font-family: "Berlin Sans FB", serif;
+    font-size: 30pt;
+    margin-bottom: 20px;
+}
+
+#Tableau , th , tbody , tr , td{
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+    column-width: 100px;
+}
+
+#Acheter_objets{
+    margin-top: 10px;
+    margin-left: 530px;
+}
+
+.ajoutHero div {
+    height: auto;
+    margin-bottom: 10px;
+}
