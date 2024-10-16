@@ -1,23 +1,84 @@
-#Titre{
+#presentation {
+    border: 2px solid black;
+    border-radius: 10px;
+    max-width: 500px;
+    padding: 30px;
+    margin: 0;
+}
+
+.container {
+    display: flex; /* Utilisation de flex pour aligner les 2 div a coté de lautre */
+    gap: 300px; /* Espacer les espaces */
+}
+
+#personnages {
+    display: flex;
+    justify-content: left;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+
+#Titre {
     text-align: left;
     font-family: "Berlin Sans FB", serif;
     font-size: 30pt;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
-#Tableau , th , tbody , tr , td{
+#Tableau, th, tbody, tr, td {
+    margin: 10px;
     border-collapse: collapse;
     border: 1px solid black;
     text-align: center;
-    column-width: 100px;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
 }
 
-#Acheter_objets{
-    margin-top: 10px;
-    margin-left: 530px;
+#personnages, h2 {
+    margin-left: 20px;
+}
+
+.bouton-acheter {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.ajoutHero {
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .ajoutHero div {
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
 }
+
+.ajoutHero label {
+    display: block;
+    width: 150px;
+    height: 20px;
+}
+
+.ajoutHero button {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 0;
+}
+
+#Ajouter_objet {
+    margin-left: 170px;
+}
+
+.attributs {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
