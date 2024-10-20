@@ -6,102 +6,91 @@
   <link rel="stylesheet" href="Magasin.css">
 </head>
 <body>
-<header id="Titre">Magasin</header>
-<div class="container">
-  <div id="presentation">
-    <table id="Tableau">
+<div class="mainpage">
+  <h1>Magasin</h1>
+  <table>
       <thead>
-      <tr>
-        <th scope="col">Objet</th>
-        <th scope="col">Puissance Offense</th>
-        <th scope="col">Puissance Defensive</th>
-        <th scope="col">Cout</th>
-        <th scope="col">Achat</th>
-      </tr>
+        <tr>
+          <th>Objet</th>
+          <th>Puissance Offensive</th>
+          <th>Puissance Defensive</th>
+          <th>Cout</th>
+          <th>Achat</th>
+        </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>Gros marteau</td>
-        <td>10</td>
-        <td>0</td>
-        <td>50.00$</td>
-        <td><input type="checkbox" name="Achat_marteau"></td>
-      </tr>
       <tr>
         <td>Casque Cornu</td>
         <td>3</td>
         <td>6</td>
         <td>100.00$</td>
-        <td><input type="checkbox" name="Achat_casque"></td>
+        <td><input type="checkbox"></td>
       </tr>
       <tr>
         <td>Pantoufles discrètes</td>
         <td>0</td>
         <td>8</td>
         <td>200.00$</td>
-        <td><input type="checkbox" name="Achat_pantouffles"></td>
+        <td><input type="checkbox"></td>
       </tr>
       <tr>
         <td>Sabre laser</td>
         <td>20</td>
         <td>-5</td>
-        <td>400.00$</td>
-        <td><input type="checkbox" name="Achat_sabre"></td>
+        <td>500.00$</td>
+        <td><input type="checkbox"></td>
       </tr>
       <tr>
-        <td>Plastron de rêveur</td>
+        <td>Plastron de Receveur</td>
         <td>0</td>
         <td>15</td>
         <td>75.00$</td>
-        <td><input type="checkbox" name="Achat_plastron"></td>
+        <td><input type="checkbox"></td>
       </tr>
       </tbody>
-    </table>
-    <div class="bouton-acheter">
-      <button class="bouton-acheter" type="submit">Acheter</button>
+  </table>
+  <div class="alerte">Vous n'avez pas assez d'argent !</div>
+  <button class="boutonacheter">Acheter</button>
+
+  <div class="personnages">
+  <h2>Personnages</h2>
+    <div class="info-personnage">
+      <img class="image-personnage" id="image-jacques" src="images/JacquesLePirate.png" height="200" width="240">
+      <div class="detail-personnage">
+        <select class="caracteres">
+          <option>Jacques le Pirate</option>
+          <option>Farouche la sorciere</option>
+        </select>
+        <p>Attaque : 12</p>
+        <p>Défense : 5</p>
+        <p>Argent : 350.00$</p>
+      </div>
     </div>
   </div>
 
-  <div id="personnages">
-    <h2>Personnages</h2>
-    <div class="info-personnages">
-      <label for="caracter"> Sélectionnez un personnage : </label>
-      <select id="caracter">
-        <option value="jacques"> Jacques le pirate</option>
-        <option value="marie"> Marie la sorcière</option>
-        <option value="henri"> Henri le chevalier</option>
-      </select>
-    </div>
-    <div class="attributs">
-      <p>Attaque : <span id="attaque">12</span></p>
-      <p>Défense : <span id="defense">5</span></p>
-      <p>Argent : <span id="monaie">350.00$</span></p>
-    </div>
+  <div>
+    <form class="ajoutHero">
+      <h2>Ajouter un objet au magasin</h2>
+      <div>
+        <label for="Nom">Nom: </label>
+        <input type="text" id="Nom" required>
+      </div>
+      <div>
+        <label for="puissance_o">Puissance Offense: </label>
+        <input type="number" id="puissance_o" required>
+      </div>
+      <div>
+        <label for="puissance_d">Puissance Défensive: </label>
+        <input type="number" id="puissance_d" required>
+      </div>
+      <div>
+        <label for="cout">Cout: </label>
+        <input type="text" id="cout" required>
+      </div>
+      <button id="Ajouter_objet" type="submit">Ajouter</button>
+      <button id="Annuler_ajout" type="reset">Annuler</button>
+    </form>
   </div>
-</div>
-
-<div>
-  <form class="ajoutHero">
-    <h2>Ajouter un objet au magasin</h2>
-    <div>
-      <label for="Nom">Nom: </label>
-      <input type="text" id="Nom" required>
-    </div>
-    <div>
-      <label for="puissance_o">Puissance Offense: </label>
-      <input type="number" id="puissance_o" required>
-    </div>
-    <div>
-      <label for="puissance_d">Puissance Défensive: </label>
-      <input type="number" id="puissance_d" required>
-    </div>
-    <div>
-      <label for="cout">Cout: </label>
-      <input type="text" id="cout" required>
-    </div>
-    <button id="Ajouter_objet" type="submit">Ajouter</button>
-    <button id="Annuler_ajout" type="reset">Annuler</button>
-  </form>
 </div>
 
 </body>
