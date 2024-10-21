@@ -18,7 +18,7 @@
           <th>Achat</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="ListItem">
       <tr>
         <td>Casque Cornu</td>
         <td>3</td>
@@ -50,26 +50,26 @@
       </tbody>
   </table>
   <div class="alerte">Vous n'avez pas assez d'argent !</div>
-  <button class="boutonacheter">Acheter</button>
+  <button id="BoutonAcheter" class="boutonacheter">Acheter</button>
 
   <div class="personnages">
   <h2>Personnages</h2>
     <div class="info-personnage">
-      <img class="image-personnage" id="image-jacques" src="images/JacquesLePirate.png" height="200" width="240">
+      <img class="image-personnage" id="imagePersonnage" src="images/JacquesLePirate.png" height="200" width="240">
       <div class="detail-personnage">
-        <select class="caracteres">
+        <select class="caracteres" id="ChoixCaracteres">
           <option>Jacques le Pirate</option>
           <option>Farouche la sorciere</option>
         </select>
-        <p>Attaque : 12</p>
-        <p>Défense : 5</p>
-        <p>Argent : 350.00$</p>
+        <p id="Attaque">Attaque : 12</p>
+        <p id="Defense">Défense : 5</p>
+        <p id="Argent">Argent : 350.00$</p>
       </div>
     </div>
   </div>
 
   <div>
-    <form class="ajoutHero">
+    <form id="formulaireAjoutHero" class="ajoutHero">
       <h2>Ajouter un objet au magasin</h2>
       <div>
         <label for="Nom">Nom: </label>
@@ -92,6 +92,6 @@
     </form>
   </div>
 </div>
-
+<script src="magasin.js"></script>
 </body>
 </html>
