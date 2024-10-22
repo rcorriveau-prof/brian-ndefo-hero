@@ -1,6 +1,51 @@
-/* Recuperation de nos boutons et de nos differents items de liste et de tableau pour y ajouter des actions*/
+/*Creez un objet pour les objet du magasin */
+let IdObjet = 0
+function Objet(nomObjet, PuissanceObjet, DefenseObjet, cout=0){
+    IdObjet++
+    this.nomObjet = nomObjet;
+    this.PuissanceObjet = PuissanceObjet;
+    this.DefenseObjet = DefenseObjet;
+    this.Cout=cout;
+}
+let ListeObjet = [];
+//Instancier 4 objet pour le magasin
+const Objet_1 = new Objet("Casque Cornu", 3, 6, 100)
+const Objet_2 = new Objet("Pantoufles discrètes", 0, 8, 200)
+const Objet_3 = new Objet("Sabre laser", 20, -5, 500)
+const Objet_4 = new Objet("Plastron de Receveur", 0, 15, 75)
 
+ListeObjet.push(Objet_1);
+ListeObjet.push(Objet_2);
+ListeObjet.push(Objet_3);
+ListeObjet.push(Objet_4);
 
+AfficherTableau()
+
+function AfficherTableau(){
+    let table = document.querySelector('#table tbody');
+    table.innerHTML = '';
+    ListeObjet.forEach(function(objet){
+        let row = table.insertRow();
+        let Nom = row.insertCell(0);
+        let Puissance = row.insertCell(1);
+        let Defense = row.insertCell(2);
+        let Cout = row.insertCell(3);
+        let checkbox = row.insertCell(4);
+
+        //Creer le checkbox pour le tableau
+        let cellCheckBox = document.createElement('input');
+        cellCheckBox.type = 'checkbox';
+        checkbox.appendChild(cellCheckBox);
+
+        Nom.textContent = objet.nomObjet;
+        Puissance.textContent = objet.PuissanceObjet;
+        Defense.textContent = objet.DefenseObjet;
+        Cout.textContent = objet.Cout.toFixed(2)+ '$';
+        checkbox.checked = false;
+    })
+}
+
+AfficherTableau();
 const ListItem = document.getElementById('ListItem');
 const ChoixCaracteres = document.getElementById('ChoixCaracteres');
 const ImagePersonnage = document.getElementById('ImagePersonnage');
@@ -52,10 +97,10 @@ BoutonAcheter.addEventListener('click', function() {
         alert(`Merci de votre achat! \nCela vous va ravir ! \nMort a vos ennemies \nTotal de ${coutTotal.toFixed(2)}$`);
     }
 
-    Array.from(ListItem.rows).forEach((row) => {
+    Array.from(ListItem.rows).forEach((row, index) => {
         const checkbox = row.querySelector('input[type="checkbox"]');
         if (checkbox.checked) {
-            document.getElementById("table").deleteRow()
+            ListItem.deleteRow(index);
         }
     })
 })
@@ -91,14 +136,7 @@ function validateItem(Nom, Attaque, Defense, Cout) {
     return true;
 }
 
-/* Fonction pour vider le formulaire apres la soummision*/
-function clearForm() {
-    FormulaireAjoutHero.reset()
-    MessageAlerter.style.display = 'none';
-}
-
-
-
+//Ajouter Un Objet
 document.querySelector('#formulaireAjoutHero').addEventListener('submit', (e) => {
     e.preventDefault();
     let nom = document.getElementById('Nom').value;
@@ -106,25 +144,12 @@ document.querySelector('#formulaireAjoutHero').addEventListener('submit', (e) =>
     let defense = parseInt(document.getElementById('puissance_d').value);
     let cout = parseInt(document.getElementById('cout').value);
 
-    let table = document.querySelector('#table tbody');
-    let row = table.insertRow();
-    let Nom = row.insertCell(0);
-    let Puissance = row.insertCell(1);
-    let Defense = row.insertCell(2);
-    let Cout = row.insertCell(3);
-    let checkbox = row.insertCell(4);
+   const objet = new Objet(nom, puissance, defense, cout);
+   ListeObjet.push(objet);
 
-    //Creer le checkbox pour le tableau
-    let cellCheckBox = document.createElement('input');
-    cellCheckBox.type = 'checkbox';
-    checkbox.appendChild(cellCheckBox);
+   AfficherTableau()
 
-    Nom.textContent = nom
-    Puissance.textContent = puissance.toString()
-    Defense.textContent = defense.toString()
-    Cout.textContent = cout.toFixed(2) + '$'
-    checkbox.checked = false;
-
+   document.querySelector('#formulaireAjoutHero').reset();
 })
 
 
