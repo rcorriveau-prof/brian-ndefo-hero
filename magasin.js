@@ -122,7 +122,7 @@ rechargerInfoCaracteres(); //Initialise les informations du caractere a charger 
 
 /* Fonction qui permet de valider les differetes conditions pour les donnees*/
 function validateItem(Nom, Attaque, Defense, Cout) {
-    if (Nom.lenght < 3 || Nom.lenght > 30 ) {
+    if (Nom.length < 3 || Nom.length > 30 ) {
         alert("Le nom doit avoir une longeur de 3 a 30 caracteres.");
         return false;
     }
@@ -147,17 +147,25 @@ function validateItem(Nom, Attaque, Defense, Cout) {
 //Ajouter Un Objet
 document.querySelector('#formulaireAjoutHero').addEventListener('submit', (e) => {
     e.preventDefault();
+
     let nom = document.getElementById('Nom').value;
     let puissance = parseInt(document.getElementById('puissance_o').value);
     let defense = parseInt(document.getElementById('puissance_d').value);
     let cout = parseInt(document.getElementById('cout').value);
 
-   const objet = new Objet(nom, puissance, defense, cout);
-   ListeObjet.push(objet);
+    if (validateItem(nom, puissance, defense, cout)) {
+        const objet = new Objet(nom, puissance, defense, cout);
+        ListeObjet.push(objet);
 
-   AfficherTableau()
+        AfficherTableau()
 
-   document.querySelector('#formulaireAjoutHero').reset();
+        document.querySelector('#formulaireAjoutHero').reset();
+    }  else {
+        alert("Veuillez remplir correctement tous les champs.");
+    }
+
+
+
 })
 
 
