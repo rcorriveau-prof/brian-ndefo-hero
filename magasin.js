@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         AffichageAttaque.textContent = `Attaque : ${infoCharactere.Attaque}`;
         AffichageDefense.textContent = `Defense : ${infoCharactere.Defense}`;
         AffichageArgent.textContent = `Argent : ${infoCharactere.Argent.toFixed(2)}$`;
-        ImagePersonnage.src = `images/${infoCharactere.Image}`;
+
     }
 
     BoutonAcheter.addEventListener('click', function() {
@@ -63,15 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
     ChoixCaracteres.addEventListener('change', rechargerInfoCaracteres);
     rechargerInfoCaracteres(); //Initialise les informations du caractere a charger sur la page
 
-    FormulaireAjoutHero.addEventListener('submit', function (event){
-        event.preventDefault(); //Affiche les informations du nouveau caractere sur l'interface
-    });
 
-    /* Recuperation des données du formulaire qui seront ajouter au tableau*/
-    const NomItem = document.getElementById('Nom').value;
-    const PuissanceOffensive = document.getElementById('puissance_o').value;
-    const PuissanceDefensive = document.getElementById('puissance_d').value;
-    const Cout = document.getElementById('cout').value;
+
+
 
     /* Fonction qui permet de valider les differetes conditions pour les donnees*/
     function validateItem(Nom, Attaque, Defense, Cout) {
@@ -102,4 +96,32 @@ document.addEventListener('DOMContentLoaded', function() {
         FormulaireAjoutHero.reset()
         MessageAlerter.style.display = 'none';
     }
+
+
+
+    document.querySelector('#formulaireAjoutHero').addEventListener('submit', (e) => {
+        e.preventDefault();
+        let nom = document.getElementById('Nom').value;
+        let puissance = parseInt(document.getElementById('puissance_o').value);
+        let defense = parseInt(document.getElementById('puissance_d').value);
+        let cout = parseInt(document.getElementById('cout').value);
+
+        let table = document.querySelector('#table tbody');
+        let row = table.insertRow(-1);
+        let Nom = row.insertCell(0);
+        let Puissance = row.insertCell(1);
+        let Defense = row.insertCell(2);
+        let Cout = row.insertCell(3);
+        let checkbox
+
+        Nom.textContent = nom
+        Puissance.textContent = puissance.toString()
+        Defense.textContent = defense.toString()
+        Cout.textContent = cout.toFixed(2) + '$'
+
+
+    })
 })
+
+
+
