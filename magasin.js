@@ -52,8 +52,6 @@ const ImagePersonnage = document.getElementById('ImagePersonnage');
 const AffichageAttaque = document.getElementById('Attaque');
 const AffichageDefense = document.getElementById('Defense');
 const AffichageArgent = document.getElementById('Argent');
-const MessageAlerter = document.getElementById('.alerte');
-const FormulaireAjoutHero  = document.getElementById('FormulaireAjoutHero');
 const BoutonAcheter = document.getElementById('BoutonAcheter');
 
 /* Ajout des differents isntances de caracters dont ont aura le choix de voir les statistiques */
@@ -88,21 +86,31 @@ BoutonAcheter.addEventListener('click', function() {
     });
 
     if (coutTotal > Argentcaractere) {
-        MessageAlerter.style.display = 'block';
+        alert("Le personnage n'a pas assez de fond pour l'achat")
+
     }
     else {
         caracteres[caractereChoisi].Argent -= coutTotal;
         rechargerInfoCaracteres();
+        let achatRemerciement = [
+            "Merci de votre achat!",
+            "Cela vous va ravir !",
+            "Mort à vos ennemis"
+        ];
 
-        alert(`Merci de votre achat! \nCela vous va ravir ! \nMort a vos ennemies \nTotal de ${coutTotal.toFixed(2)}$`);
+        let randomIndex = Math.floor(Math.random() * achatRemerciement.length);
+        let randomElement = achatRemerciement[randomIndex];
+
+        alert(`${randomElement} \nTotal de ${coutTotal.toFixed(2)}$`);
+
+        Array.from(ListItem.rows).forEach((row, index) => {
+            const checkbox = row.querySelector('input[type="checkbox"]');
+            if (checkbox.checked) {
+                ListItem.deleteRow(index);
+            }
+        })
     }
 
-    Array.from(ListItem.rows).forEach((row, index) => {
-        const checkbox = row.querySelector('input[type="checkbox"]');
-        if (checkbox.checked) {
-            ListItem.deleteRow(index);
-        }
-    })
 })
 
 ChoixCaracteres.addEventListener('change', rechargerInfoCaracteres);
