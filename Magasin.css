@@ -53,14 +53,26 @@ th {
 
 .personnages {
     text-align: center;
-    border: 2px solid black;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 60px;
+}
+.detail-personnage {
+    display: flex;
+    width: 100%;
+    text-align: center;
+
+#afficher-detail-personnage {
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+}
+
+#attributs-personnage {
+    border: 1px solid black;
     border-radius: 10px;
     margin-top: 20px;
 }
-.detail-personnage {
-    width: auto;
-    text-align: center;
-
 }
 .info-personnage {
     display: flex;
@@ -69,7 +81,7 @@ th {
 
 .image-personnage {
     width: auto;
-    margin: 0 20px 10px 10px
+    margin: 30px 10px 10px 10px
 }
 
 .ajoutHero {

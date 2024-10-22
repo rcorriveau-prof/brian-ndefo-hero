@@ -53,18 +53,25 @@
   <div class="alerte">Vous n'avez pas assez d'argent !</div>
   <button id="BoutonAcheter" class="boutonacheter">Acheter</button>
 
+
+
+
   <div class="personnages">
-  <h2>Personnages</h2>
     <div class="info-personnage">
-      <img class="image-personnage" id="imagePersonnage" src="images/JacquesLePirate.png" height="200" width="240">
       <div class="detail-personnage">
-        <select class="caracteres" id="ChoixCaracteres">
-          <option>Jacques le Pirate</option>
-          <option>Farouche la sorciere</option>
-        </select>
-        <p id="Attaque">Attaque : 12</p>
-        <p id="Defense">Défense : 5</p>
-        <p id="Argent">Argent : 350.00$</p>
+        <img class="image-personnage" id="imagePersonnage" src="images/JacquesLePirate.png" height="200" width="240">
+        <div id="afficher-detail-personnage">
+          <h2>Personnages</h2>
+          <select class="caracteres" id="ChoixCaracteres">
+            <option>Jacques le Pirate</option>
+            <option>Farouche la sorciere</option>
+          </select>
+          <div id="attributs-personnage">
+            <p id="Attaque">Attaque : 12</p>
+            <p id="Defense">Défense : 5</p>
+            <p id="Argent">Argent : 350.00$</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
